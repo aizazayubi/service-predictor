@@ -1,0 +1,110 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Service Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2f3640;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #2f3640;
+        }
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #4cd137;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #44bd32;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            background-color: #f1f2f6;
+            text-align: center;
+            font-weight: bold;
+            color: #192a56;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Garage Service Predictor</h2>
+        <form action="/predict" method="post">
+            <label for="make">Vehicle Make</label>
+            <select id="make" name="make" required>
+                <option value="">Select Make</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Nissan">Nissan</option>
+                <option value="BMW">BMW</option>
+            </select>
+
+            <label for="model">Vehicle Model</label>
+            <select id="model" name="model" required>
+                <option value="">Select Model</option>
+                <option value="Corolla">Corolla</option>
+                <option value="Civic">Civic</option>
+                <option value="Focus">Focus</option>
+                <option value="Altima">Altima</option>
+                <option value="3 Series">3 Series</option>
+            </select>
+
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" placeholder="e.g., 2018" required>
+
+            <label for="mileage">Mileage</label>
+            <input type="number" id="mileage" name="mileage" placeholder="e.g., 50000" required>
+
+            <button type="submit">Predict Service</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            Predicted Next Service: {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
