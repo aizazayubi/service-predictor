@@ -24,11 +24,12 @@ service-predictor/
 ├─ app/
 │  ├─ **init**.py
 │  ├─ main.py           # FastAPI application
-│  ├─ model.py          # ML model and prediction logic
+│  ├─ model.py
+│  ├─ data.csv          # ML model and prediction logic
 │  └─ templates/
 │     └─ index.html     # HTML form interface
 ├─ venv/                # Virtual environment (ignored in git)
-├─ data.csv             # Sample dataset
+            # Sample dataset
 └─ requirements.txt
 
 ````
