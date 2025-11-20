@@ -45,29 +45,13 @@ git clone https://github.com/aizazayubi/service-predictor.git
 cd service-predictor
 ````
 
-2. Create and activate a virtual environment:
 
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-```
-
-3. Install dependencies:
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Make sure you have `python-multipart` installed for form handling:
-
-```bash
-pip install python-multipart
-```
-
----
 
 ## Usage
 
