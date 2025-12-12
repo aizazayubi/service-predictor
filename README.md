@@ -22,14 +22,14 @@ A simple web application to predict the next service type for a vehicle using ma
 
 service-predictor/
 ├─ app/
-│  ├─ **init**.py
-│  ├─ main.py           # FastAPI application
-│  ├─ model.py
-│  ├─ data.csv          # ML model and prediction logic
+│  ├─ __init__.py
+│  ├─ main.py           FastAPI application
+│  ├─ model.py          ML model and prediction logic
+│  ├─ data.csv          Sample dataset         
 │  └─ templates/
-│     └─ index.html     # HTML form interface
-├─ venv/                # Virtual environment (ignored in git)
-            # Sample dataset
+│     └─ index.html     HTML form interface
+├─ venv/                Virtual environment (ignored in git)
+            
 └─ requirements.txt
 
 ````
